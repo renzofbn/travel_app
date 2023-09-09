@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="travellApp.SignUpPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#181415">
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,Auto">
+            <!--Main image-->
+            <Image Grid.RowSpan="2"  Source="Paris" VerticalOptions="Start" Aspect="AspectFit"/>
+            <Label Grid.Row="0" Text="Registrate" FontSize="34" TextColor="White" VerticalOptions="End" FontAttributes="Bold" Padding="20,0,0,20"/>
+
+            <Frame Grid.Row="1" HasShadow="False" Margin="15,0,15,20" VerticalOptions="FillAndExpand" CornerRadius="20" Opacity="0.9" BackgroundColor="#2e2b2c">
+                <Grid  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="25" Padding="0,10,0,0">
+                    <Entry Grid.Row="0" Placeholder="Correo" Keyboard="Email" x:Name="EmailInput" Style="{StaticResource EntryInput}" Margin="0,10,0,20"/>
+                    <Entry Grid.Row="1" Placeholder="Contraseña" IsPassword="true" x:Name="PasswordInput" Style="{StaticResource EntryInput}" Margin="0,10,0,20"/>
+                    <Entry Grid.Row="2" Placeholder="Confirmar Contraseña" IsPassword="true" x:Name="ConfirmPasswordInput" Style="{StaticResource EntryInput}" Margin="0,10,0,20"/>
+                    <Button Grid.Row="5" Text="Ingresar" Clicked="SingUpNewUser" Style="{StaticResource Highlighted}" Margin="0,10,0,5"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
