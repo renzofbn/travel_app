@@ -1,0 +1,46 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRAVEL01.Views.Login">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f2f2f2">
+            <!-- Encabezado con el título "Travel" -->
+            <StackLayout>
+                
+                <Image Source="destino.jpg" Aspect="AspectFill">
+                    <Image.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <On Platform="iOS">true</On>
+                            <On Platform="Android">true</On>
+                            <On Platform="UWP">true</On>
+                            
+                        </OnPlatform>
+                    </Image.IsVisible>
+                </Image>
+
+                <!-- Título "Travel" centrado en el espacio del título anterior -->
+                <Label Text="Travel" FontSize="48" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                
+            </StackLayout>
+
+            <!-- Contenido principal -->
+            <ScrollView>
+                <StackLayout Margin="20" Spacing="20">
+                    <StackLayout>
+                        <Label Text="Correo Electrónico:" TextColor="Black" />
+                        <Entry Placeholder="Ingrese su correo electrónico" x:Name="EntryUserEmail" TextColor="Gray" />
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Contraseña:" TextColor="Black" />
+                        <Entry Placeholder="Ingrese su contraseña" x:Name="EntryPassword" TextColor="Gray" IsPassword="True" />
+                    </StackLayout>
+
+                    <Button Text="Iniciar Sesión" BackgroundColor="#0077be" TextColor="White" 
+                            Clicked="Handle_Clicked_1" />
+
+                    <Button Text="Registrar" Clicked="Handle_Clicked" BackgroundColor="Transparent" TextColor="#0077be" BorderColor="#0077be" BorderWidth="1" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRAVEL01.Views.Viaje1">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Contenido principal de la página "Viaje1" -->
+
+            <!-- Fila de iconos -->
+            <Frame Grid.Row="3" BackgroundColor="Gray" Padding="10" HasShadow="False" IsClippedToBounds="True" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="house.png" HeightRequest="40" WidthRequest="40" Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="IrAHomePageTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="use1.png" HeightRequest="40" WidthRequest="40" Margin="10" />
+                    <Image Source="bole.png" HeightRequest="40" WidthRequest="40" Margin="10" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Título centrado en la segunda fila -->
+            <Label Text="Huacachina - Ica" Grid.Row="1" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="40" />
+
+
+            <StackLayout Padding="20" Grid.Row="2">
+                <!-- Cuadro de entrada para la cantidad de pasajes de adultos -->
+                <Entry Placeholder="Adultos" x:Name="AdultosEntry" Keyboard="Numeric" />
+
+                <!-- Cuadro de entrada para la cantidad de pasajes de niños -->
+                <Entry Placeholder="Niños" x:Name="NinosEntry" Keyboard="Numeric" />
+
+                <!-- Selector de fechas con placeholder -->
+                <Picker x:Name="FechaPicker">
+                    <Picker.Title>
+                        Selecciona una fecha:
+                    </Picker.Title>
+                    <Picker.Items>
+                        <x:String>LUNES 21</x:String>
+                        <x:String>MARTES 22</x:String>
+                        <x:String>MIÉRCOLES 23</x:String>
+                    </Picker.Items>
+                </Picker>
+
+
+
+                <!-- Botón de guardar -->
+                <Button Text="Comprar" Clicked="GuardarClicked" />
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

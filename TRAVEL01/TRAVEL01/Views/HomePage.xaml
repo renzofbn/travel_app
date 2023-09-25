@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRAVEL01.Views.HomePage">
+
+    <!-- Definimos el diseño de la página -->
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Encabezado -->
+            <StackLayout Grid.Row="0" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Margin="20">
+                <Label Text="Travel" FontSize="48" TextColor="Black" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                <Label x:Name="UserNameLabel" FontSize="24" TextColor="Black" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <!-- Contenido principal -->
+            <StackLayout Grid.Row="1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="20">
+                <!-- Agrega aquí el contenido principal de tu página -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Cuadro de imagen 1 -->
+                    <Frame x:Name="CuadroImagen1" Grid.Row="0" Grid.Column="0" CornerRadius="10" HasShadow="True" BackgroundColor="Transparent" Padding="0" IsClippedToBounds="True" InputTransparent="True">
+                        <Image Source="huaca.jpg" Aspect="AspectFill">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MostrarInformacionTapped" />
+                                <TapGestureRecognizer Tapped="ComprarTapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+
+
+                    <!-- Cuadro de imagen 2 -->
+                    <Frame x:Name="CuadroImagen2" Grid.Row="0" Grid.Column="1" CornerRadius="10" HasShadow="True" BackgroundColor="Transparent" Padding="0" IsClippedToBounds="True" InputTransparent="True">
+                        <Image Source="laguna.jpg" Aspect="AspectFill">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MostrarInformacionTapped01" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+
+                    <!-- Cuadro de imagen 3 -->
+                    <Frame x:Name="CuadroImagen3" Grid.Row="0" Grid.Column="2" CornerRadius="10" HasShadow="True" BackgroundColor="Transparent" Padding="0" IsClippedToBounds="True" InputTransparent="True">
+                        <Image Source="pacaya.jpg" Aspect="AspectFill">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MostrarInformacionTapped02" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+
+                    <!-- Cuadro de imagen 4 (nueva) -->
+                    <Frame x:Name="CuadroImagen4" Grid.Row="1" Grid.Column="0" CornerRadius="10" HasShadow="True" BackgroundColor="Transparent" Padding="0" IsClippedToBounds="True" InputTransparent="True">
+                        <Image Source="machupichu.jpg" Aspect="AspectFill">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MostrarInformacionTapped03" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+
+                    <!-- Cuadro de imagen 5 (nueva) -->
+                    <Frame x:Name="CuadroImagen5" Grid.Row="1" Grid.Column="1" CornerRadius="10" HasShadow="True" BackgroundColor="Transparent" Padding="0" IsClippedToBounds="True" InputTransparent="True">
+                        <Image Source="colores.jpg" Aspect="AspectFill">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MostrarInformacionTapped04" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+
+                    <!-- Cuadro de imagen 6 (nueva) -->
+                    <Frame x:Name="CuadroImagen6" Grid.Row="1" Grid.Column="2" CornerRadius="10" HasShadow="True" BackgroundColor="Transparent" Padding="0" IsClippedToBounds="True" InputTransparent="True">
+                        <Image Source="mancora1.jpg" Aspect="AspectFill">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MostrarInformacionTapped05" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+
+            <!-- Fila de iconos en un Frame -->
+            <Frame Grid.Row="2" BackgroundColor="Gray" Padding="10" HasShadow="False" IsClippedToBounds="True" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="house.png" HeightRequest="40" WidthRequest="40" Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="IrAHomePageTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="use1.png" HeightRequest="40" WidthRequest="40" Margin="10" />
+
+
+                    <Image Source="bole.png" HeightRequest="40" WidthRequest="40" Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="VerVentas" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    
+                    <!-- Imagen con evento Clicked -->
+                    <Image Source="logout.png" HeightRequest="40" WidthRequest="40" Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_Clicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+            </Frame>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

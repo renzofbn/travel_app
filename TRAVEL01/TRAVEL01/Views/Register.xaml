@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRAVEL01.Views.Register">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f2f2f2">
+            <!-- Encabezado con el título "Crear Cuenta" -->
+            <StackLayout BackgroundColor="#0077be" Padding="20,40,20,20">
+                <Label Text="Crear Cuenta" FontSize="24" TextColor="White" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <!-- Contenido principal -->
+            <ScrollView>
+                <StackLayout Margin="20" Spacing="20">
+                    <StackLayout>
+                        <Label Text="Nombre:" TextColor="Black" />
+                        <Entry Placeholder="Ingrese su nombre" x:Name="EntryUserName" TextColor="Gray" />
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Apellidos:" TextColor="Black" />
+                        <Entry Placeholder="Ingrese sus apellidos" x:Name="EntryUserLastName" TextColor="Gray" />
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="N° de DNI:" TextColor="Black" />
+                        <Entry Placeholder="Ingrese su DNI" x:Name="EntryUserIDNumber" Keyboard="Telephone" TextColor="Gray" />
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Fecha de Nacimiento:" TextColor="Black" />
+                        <DatePicker x:Name="DatePickerUserDOB"  TextColor="Gray"/>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Celular:" TextColor="Black" />
+                        <Entry Placeholder="Ingrese su celular" x:Name="EntryUserPhoneNumber" Keyboard="Telephone" TextColor="Gray" />
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Correo:" TextColor="Black" />
+                        <Entry Placeholder="Ingrese su correo" x:Name="EntryUserEmail" TextColor="Gray" />
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Contraseña:" TextColor="Black" />
+                        <Entry Placeholder="Ingrese su contraseña" IsPassword="True" x:Name="EntryUserPassword" TextColor="Gray" />
+                    </StackLayout>
+
+                    <Button Text="Registrar" BackgroundColor="#0077be" TextColor="White" Clicked="Handle_Clicked" Margin="0,40,0,20" />
+
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
